@@ -1,0 +1,15 @@
+
+.navBarMain:hover{
+   color: #05a0e8;
+}
+
+/*  logo style --- */
+.logo{
+   font-size:25px ; 
+   font-weight: 700;
+
+   background: linear-gradient(to right, #bc0755 ,#6f2683 ,  #3b45aa);
+   background-clip: text;
+   -webkit-background-clip: text; 
+   color: transparent;
+}
