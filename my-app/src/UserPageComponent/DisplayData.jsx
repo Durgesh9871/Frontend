@@ -28,12 +28,12 @@ const DisplayData = () => {
         </Skeleton>
 
 
-        {/* product details  */}
+        {/* user details  */}
         <SkeletonText mt='4' noOfLines={3} spacing='5' skeletonHeight='4'  isLoaded={true} animation="none">
-        <Box id='productDataDesc' position="absolute" bottom="20px"    style={{border:"2px   #EBECEE" ,height:"auto" , padding:"10px 10px 10px 10px" ,cursor:'pointer'  }}w={{base:"79vw", sm: "54vw", md: "31vw", lg: "22vw" ,xl: "22vw",'2xl': "22vw",}}>
+        <Box   position="absolute" bottom="12px"    style={{border:"2px   #EBECEE" ,height:"auto" , padding:"10px 10px 10px 10px"   }}w={{base:"79vw", sm: "54vw", md: "31vw", lg: "22vw" ,xl: "22vw",'2xl': "22vw",}}>
         
         {/* Adding in team --------- */}
-        <Box  width={{base:"60%", sm: "60%", md: "60%", lg: "85%" ,xl: "60%",'2xl': "60%",}}     style={{border:"2px solid #EBECEE" , margin:"auto" , display:"flex" ,justifyContent:"center" , alignItems:"center" ,padding:"2px" , color:"#f75045"  }}>  <Text ml={2} fontWeight="500" >ADD TO CART</Text> </Box> 
+        <Box  width={{base:"60%", sm: "60%", md: "60%", lg: "85%" ,xl: "60%",'2xl': "60%",}}     style={{cursor:'pointer' , border:"2px solid #EBECEE" , margin:"auto" , display:"flex" ,justifyContent:"center" , alignItems:"center" ,padding:"2px" , color:"#f75045"  }}>  <Text ml={2} fontWeight="500" >ADD IN TEAM</Text> </Box> 
         
         <Box style={{display:"flex" ,justifyContent:"space-between" }}>
          <Box>

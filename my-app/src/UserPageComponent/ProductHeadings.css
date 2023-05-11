@@ -1,35 +1,6 @@
 
-.productNavigationBar{
-    display: flex;
-    cursor: pointer;
-    align-items: center;
-    
-}
-.HomeHover , .modelHover{
-    color: #266de8;
 
-    
-}
-.HomeHover:hover , .modelHover:hover {
-    color:  #0e4bb4 ; 
-    
-}
-.horizontalRule{
-    color: #f0f1f2;
-   
-}
-
- 
-
-/*  All product pages css----------------------------------------------------- */
-.AllProductPages:hover{
-   border-bottom: 1px solid  #0e4bb4;
-   margin-bottom: -1px;
-   
-}
-
-
-/*  Product single data ------------css --------- */
+/*  user single data ------------css --------- */
 
 .hoverProductDiv:hover{
      transition: box-shadow .1s;
