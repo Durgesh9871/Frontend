@@ -1,11 +1,12 @@
 import React from 'react';
+import { AllRoutes } from './Routes/Routes';
 
 
 function App() {
   return (
-     <div>
-      hello
-     </div>
+     <>
+      <AllRoutes />
+     </>
   );
 }
 
