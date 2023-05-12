@@ -57,7 +57,7 @@ const [searchParams] = useSearchParams()
 
 
 //  pagination logic starts from here ---
-const reviewTitleUser = 1000
+const useCountTotal = 1000
  
 // this loop for pagination count --------
 const numLoop = [5,9,13,17,21,25,29,33,37,41,45,49]
@@ -65,7 +65,7 @@ const numLoop = [5,9,13,17,21,25,29,33,37,41,45,49]
   const handlePageChange = ()=>{
     setChangePage(changePage+1)
     for(var i=0 ; i<numLoop.length ; i++){
-      if(5 < Math.ceil(reviewTitleUser/20) && changePage == numLoop[i] ){
+      if(5 < Math.ceil(useCountTotal/20) && changePage == numLoop[i] ){
         setChangeNum(numLoop[i])
       }
     }
@@ -84,7 +84,7 @@ const numLoop = [5,9,13,17,21,25,29,33,37,41,45,49]
   const handlePagePrevious = ()=>{
     setChangePage(changePage-1)
     for(var i=0 ; i<numLoop.length ; i++){
-      if(5 < Math.ceil(reviewTitleUser/20) && changePage == numLoop[i] ){
+      if(5 < Math.ceil(useCountTotal/20) && changePage == numLoop[i] ){
         setChangeNum(numLoop[i]-4)
       }
     }
@@ -143,7 +143,7 @@ const numLoop = [5,9,13,17,21,25,29,33,37,41,45,49]
       
       {/* pagination starts from here  */}
       {userData.length > 0 && <Box pt="50px" pb="50px">
-          <Pagination disableNext={disableNext} disablePre={disablePre} changePage={changePage} changeNum={changeNum} handlePagePrevious={handlePagePrevious} handlePageChange={handlePageChange} setChangePage={setChangePage} reviewTitleUser={reviewTitleUser} divideValue={20} handlePaginationCount={handlePaginationCount}  />
+          <Pagination disableNext={disableNext} disablePre={disablePre} changePage={changePage} changeNum={changeNum} handlePagePrevious={handlePagePrevious} handlePageChange={handlePageChange} setChangePage={setChangePage} useCountTotal={useCountTotal} divideValue={20} handlePaginationCount={handlePaginationCount}  />
           </Box>}
           
       </Box>

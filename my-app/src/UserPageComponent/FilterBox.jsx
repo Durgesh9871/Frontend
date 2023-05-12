@@ -191,6 +191,7 @@ const clearAllFilterItem = ()=>{
     <Box>
       <Box
         className="hoverFilterMainBox" 
+       
         style={{
           display: "",
           border: "1px   black",
