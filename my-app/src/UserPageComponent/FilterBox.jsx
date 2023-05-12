@@ -62,7 +62,6 @@ const FilterBox = () => {
 const remove = (item)=>{
   const arraydomain = [...domain ]
   const arraygender = [...gender] 
-  const arrayavailable = [...available]
   
   // console.log(item)
   if(arraydomain.includes(item)){
@@ -71,28 +70,24 @@ const remove = (item)=>{
   else if(arraygender.includes(item)){
     arraygender.splice(arraygender.indexOf(item),1)
   }
- else if(arrayavailable.includes(item)){
-    arrayavailable.splice(arrayavailable.indexOf(item),1)
-  }
+
  
  
   setDomain(arraydomain)
    setGender(arraygender) 
-  setAvailable(arrayavailable)
  
 }
 
 const clearAllFilterItem = ()=>{
   setDomain([])
    setGender([]) 
-  setAvailable([])
   // setSearchParams()
 }
 
 
 
   useEffect(() => {
-    let obj = [...domain ,...gender , ...available ]
+    let obj = [...domain ,...gender  ]
 
     let params = {};
     params.domain = domain;
@@ -276,7 +271,7 @@ const clearAllFilterItem = ()=>{
           {filterAvailabilityData.length > 0 &&
             filterAvailabilityData.map((item) => {
               return (
-                <Checkbox key={item.id}  value={item.value}
+                <Checkbox key={item.id}  value={item.value} 
                 onChange={handleChangeAvailability}
                  >
                   <Text fontSize="17px" fontWeight="400" color="#1d252c">
