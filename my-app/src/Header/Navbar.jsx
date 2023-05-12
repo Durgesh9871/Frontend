@@ -280,8 +280,8 @@ const NAV_ITEMS = [
         href: "/",
       },
       {
-        label: "About",
-        href: "/",
+        label: "Team",
+        href: "/team",
       },
       {
         label: "Blog",

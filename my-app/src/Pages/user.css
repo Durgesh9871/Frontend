@@ -1,0 +1,10 @@
+
+/* responsive team */
+
+@media (min-width: 300px) and (max-width: 400px) {
+    .imageTeam{
+        margin-left: 20px;
+        /* width: 20%; */
+    }
+    
+}

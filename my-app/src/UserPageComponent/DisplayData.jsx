@@ -28,7 +28,11 @@ const DisplayData = ({item , loading}) => {
         return ele.id == item.id 
         })
 
-      if(userFind.length === 0){
+        const userDomain = userTeam.filter((ele ,i)=>{
+          return ele.domain === item.domain
+        })
+
+      if(userFind?.length === 0 && userDomain?.length === 0){
         userTeam.push(item)
         localStorage.setItem("userTeam",JSON.stringify(userTeam))
         toast({
@@ -40,12 +44,12 @@ const DisplayData = ({item , loading}) => {
           position:"top" 
         })
       }
-
-      else{
+   
+      else {
         toast({
-          title: 'Not Added (Already in Team)',
-          description: `${item.first_name} ${item.last_name} Already in Team`,
-          status: 'error',
+          title: 'Not Added (Domain Already Exist)',
+          description: `${item.domain} domain is Already present in Team`,
+          status: 'warning',
           duration: 3000,
           isClosable: true,
           position:"top" 
@@ -58,7 +62,7 @@ const DisplayData = ({item , loading}) => {
 
 
   return (
-    <Box shadow="base" className='hoverProductDiv' w={{base:"80vw", sm: "55vw", md: "32vw", lg: "23vw" ,xl: "23vw",'2xl': "23vw",}} h={{base:"375px", sm: "375px", md: "385px", lg: "385px" ,xl: "385px",'2xl': "385px",}}  style={style} border="2px  red" >
+    <Box shadow="base" className='hoverProductDiv' w={{base:"80vw", sm: "55vw", md: "32vw", lg: "23vw" ,xl: "23vw",'2xl': "23vw",}} h={{base:"375px", sm: "375px", md: "385px", lg: "385px" ,xl: "385px",'2xl': "385px",}}  style={style}  >
 
         {/* Image box -------------------- */}
         <Skeleton isLoaded={!loading}>  <Box className="image">
