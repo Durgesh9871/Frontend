@@ -23,14 +23,17 @@ Team Creation:
 
 
 User Page
-![user page](https://github.com/Durgesh9871/ReadmeImages/blob/main/Geniobits/signup.png?raw=true)
+![user page](https://github.com/Durgesh9871/ReadmeImages/blob/main/Heliverse/Screenshot%20(159).png?raw=true)
 
-![user page](https://github.com/Durgesh9871/ReadmeImages/blob/main/Geniobits/login.png?raw=true)
+![user page](https://github.com/Durgesh9871/ReadmeImages/blob/main/Heliverse/Screenshot%20(161).png?raw=true)
+
+![user page](https://github.com/Durgesh9871/ReadmeImages/blob/main/Heliverse/Screenshot%20(162).png?raw=true)
+
 
 Team page
 
-![homepage](https://github.com/Durgesh9871/ReadmeImages/blob/main/Geniobits/Home0.png?raw=true)
-![homepage](https://github.com/Durgesh9871/ReadmeImages/blob/main/Geniobits/home2.png?raw=true)
+![TeamPage](https://github.com/Durgesh9871/ReadmeImages/blob/main/Heliverse/Screenshot%20(163).png?raw=true)
+![TeamPage](https://github.com/Durgesh9871/ReadmeImages/blob/main/Heliverse/Screenshot%20(164).png?raw=true)
 
 
 <h2>Thankyou So much </h2>
