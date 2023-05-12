@@ -4,7 +4,7 @@ import "./pagination.css"
 
 function Pagination ({handlePaginationCount , disableNext , disablePre , changePage,changeNum ,handlePagePrevious ,handlePageChange, setChangePage , reviewTitleUser ,divideValue }){
     return (
-        <Box display="flex" alignItems="center"  mb="20px" border="2px  red" flexDirection={{base:"column", sm: "column", md: "row", lg: "row",xl: "row",'2xl': "row"}} > 
+        <Box className="paginationButton" display="flex" alignItems="center"  mb="20px"  flexDirection={{base:"column", sm: "column", md: "row", lg: "row",xl: "row",'2xl': "row"}} > 
         <Text pl="20px" fontWeight="500" textAlign="left">Page {changePage} of {Math.ceil(reviewTitleUser/divideValue)}</Text>
         {/* Numbers ***********  */}
          <Box display="flex" alignItems="center" m="auto" fontWeight="400" fontSize="18px" border="2px  red"  >

@@ -13,3 +13,10 @@
 }
 
 
+/*  code for resonsiveness pagination */
+
+@media  (min-width: 300px) and (max-width: 360px)  {
+   .paginationButton{
+      margin-left: -40px;
+   }
+}
