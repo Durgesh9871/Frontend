@@ -14,6 +14,9 @@ const userTeam = JSON.parse(localStorage.getItem("userTeam")) || []
 
 const DisplayData = ({item , loading}) => {
 
+  //  checking user ------
+  
+
   const toast = useToast()
 
     let style = {
@@ -21,6 +24,11 @@ const DisplayData = ({item , loading}) => {
     }
       
     const handleTeam = (item)=>{
+      const userFind = userTeam.filter((ele ,i)=>{
+        return ele.id == item.id 
+        })
+
+      if(userFind.length === 0){
         userTeam.push(item)
         localStorage.setItem("userTeam",JSON.stringify(userTeam))
         toast({
@@ -31,7 +39,23 @@ const DisplayData = ({item , loading}) => {
           isClosable: true,
           position:"top" 
         })
+      }
+
+      else{
+        toast({
+          title: 'Not Added (Already in Team)',
+          description: `${item.first_name} ${item.last_name} Already in Team`,
+          status: 'error',
+          duration: 3000,
+          isClosable: true,
+          position:"top" 
+        })
+      }
+
     }
+
+   
+
 
   return (
     <Box shadow="base" className='hoverProductDiv' w={{base:"80vw", sm: "55vw", md: "32vw", lg: "23vw" ,xl: "23vw",'2xl': "23vw",}} h={{base:"375px", sm: "375px", md: "385px", lg: "385px" ,xl: "385px",'2xl': "385px",}}  style={style} border="2px  red" >
