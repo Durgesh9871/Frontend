@@ -21,7 +21,7 @@ const pageLoad = useRef()
 // for search bar --
 const [searchTitle, setSearchTitle] = useState('');
 
-console.log(searchTitle.length ,"searchTitle")
+// console.log(searchTitle.length ,"searchTitle")
 
   const dispatch = useDispatch()
   const location = useLocation()
