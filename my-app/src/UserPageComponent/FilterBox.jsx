@@ -8,15 +8,15 @@ import {CloseIcon} from "@chakra-ui/icons"
 
 const FilterBox = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [brand, setBrand] = useState(searchParams.getAll("brand") || []);
-  const [color, setColor] = useState(searchParams.getAll("color") || []);
-  const [rating, setRating] = useState(searchParams.getAll("rating") || []);
+  const [domain, setDomain] = useState(searchParams.getAll("domain") || []);
+  const [gender,  setGender] = useState(searchParams.getAll("gender") || []);
+  const [available, setAvailable] = useState(searchParams.getAll("available") || []);
   const [allFilter , setAllFilter ] = useState([])
 //  const [total , setTotal] = useState(1)
 
 
   const handleChange = (e) => {
-    let newCategory = [...brand];
+    let newCategory = [...domain];
    
     if (newCategory.includes(e.target.value)) {
       newCategory.splice(newCategory.indexOf(e.target.value), 1);
@@ -24,12 +24,12 @@ const FilterBox = () => {
       newCategory.push(e.target.value);
       
     }
-    setBrand(newCategory);
+    setDomain(newCategory);
     
   };
 
   const handleChangeGender = (e) => {
-    let newCategory = [...color];
+    let newCategory = [...gender];
 
     if (newCategory.includes(e.target.value)) {
       newCategory.splice(newCategory.indexOf(e.target.value), 1);
@@ -37,12 +37,12 @@ const FilterBox = () => {
       newCategory.push(e.target.value);
      
     }
-    setColor(newCategory);
+     setGender(newCategory);
 
   };
 
   const handleChangeAvailability = (e) => {
-    let newCategory = [...rating];
+    let newCategory = [...available];
     
       if (newCategory.includes(e.target.value)) {
         newCategory.splice(newCategory.indexOf(e.target.value), 1);
@@ -52,7 +52,7 @@ const FilterBox = () => {
       newCategory.push(e.target.value);
       
     }
-    setRating(newCategory);
+    setAvailable(newCategory);
   
    
   };
@@ -60,48 +60,48 @@ const FilterBox = () => {
 // console.log('allFilter' , allFilter)
  
 const remove = (item)=>{
-  const arrayBrand = [...brand ]
-  const arrayColor = [...color] 
-  const arrayRating = [...rating]
+  const arraydomain = [...domain ]
+  const arraygender = [...gender] 
+  const arrayavailable = [...available]
   
   // console.log(item)
-  if(arrayBrand.includes(item)){
-    arrayBrand.splice(arrayBrand.indexOf(item),1)
+  if(arraydomain.includes(item)){
+    arraydomain.splice(arraydomain.indexOf(item),1)
   }
-  else if(arrayColor.includes(item)){
-    arrayColor.splice(arrayColor.indexOf(item),1)
+  else if(arraygender.includes(item)){
+    arraygender.splice(arraygender.indexOf(item),1)
   }
- else if(arrayRating.includes(item)){
-    arrayRating.splice(arrayRating.indexOf(item),1)
+ else if(arrayavailable.includes(item)){
+    arrayavailable.splice(arrayavailable.indexOf(item),1)
   }
  
  
-  setBrand(arrayBrand)
-  setColor(arrayColor) 
-  setRating(arrayRating)
+  setDomain(arraydomain)
+   setGender(arraygender) 
+  setAvailable(arrayavailable)
  
 }
 
 const clearAllFilterItem = ()=>{
-  setBrand([])
-  setColor([]) 
-  setRating([])
+  setDomain([])
+   setGender([]) 
+  setAvailable([])
   // setSearchParams()
 }
 
 
 
   useEffect(() => {
-    let obj = [...brand ,...color , ...rating ]
+    let obj = [...domain ,...gender , ...available ]
 
     let params = {};
-    params.brand = brand;
-    params.color = color ;
-    params.rating = rating 
+    params.domain = domain;
+    params.gender = gender ;
+    params.available = available 
     setSearchParams(params);
 
     setAllFilter(obj)
-  }, [brand,color ,rating, setSearchParams]);
+  }, [domain,gender ,available, setSearchParams]);
 
   
 
@@ -219,7 +219,7 @@ const clearAllFilterItem = ()=>{
                   value={item.value}
                   onChange={handleChange}
                 
-                  isChecked={brand.includes(item.value)}
+                  isChecked={domain.includes(item.value)}
                 >
                   <Text fontSize="17px" fontWeight="400" color="#1d252c">
                     {item.domain} 
@@ -231,7 +231,7 @@ const clearAllFilterItem = ()=>{
       
         
 
-        <Modalfilter brand={brand} handleChange={handleChange}/>
+        <Modalfilter domain={domain} handleChange={handleChange}/>
 
         {/* Checkboxes are here ---------depend upon  Gender- ------- */}
         <hr style={{ marginTop: "3vh" }} />
@@ -243,7 +243,7 @@ const clearAllFilterItem = ()=>{
           {filterGenderData.length > 0 &&
             filterGenderData.map((item) => {
               return (
-                <Checkbox key={item.id} value={item.value} onChange={handleChangeGender}  isChecked={color.includes(item.value)} >
+                <Checkbox key={item.id} value={item.value} onChange={handleChangeGender}  isChecked={gender.includes(item.value)} >
                   <Text fontSize="17px" fontWeight="400" color="#1d252c">
                     {item.gender} 
                   </Text>
@@ -264,7 +264,7 @@ const clearAllFilterItem = ()=>{
               return (
                 <Checkbox key={item.id}  value={item.value}
                 onChange={handleChangeAvailability}
-                isChecked={rating.includes(item.value)}  >
+                isChecked={available.includes(item.value)}  >
                   <Text fontSize="17px" fontWeight="400" color="#1d252c">
                     {item.value === true ? "Available" : "Not Available"}
                   </Text>

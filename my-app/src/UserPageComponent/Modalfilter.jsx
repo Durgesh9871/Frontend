@@ -2,7 +2,7 @@ import { Button, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, 
 import React from 'react' ; 
 import "./ProductHeadings.css" ; 
 
-const Modalfilter = ({brand ,handleChange}) => {
+const Modalfilter = ({domain ,handleChange}) => {
     const { isOpen, onOpen, onClose } = useDisclosure()
 
   
@@ -76,7 +76,7 @@ const Modalfilter = ({brand ,handleChange}) => {
             <Box style={{display:"grid" , gridTemplateColumns:"repeat(3,1fr)" , gap: "20px" }}>
         {filterNameData.length > 0 &&  filterNameData.map((item)=>{
              return (
-             <Checkbox key={item.id} onChange={handleChange} defaultChecked={brand.includes(item.domain)} value={item.domain} ><Text fontSize='17px' fontWeight="400" color="#1d252c">{item.name} {item.size === "NO" && <span style={{color:"red"}}>(Not Available)</span> }</Text></Checkbox> )
+             <Checkbox key={item.id} onChange={handleChange} defaultChecked={domain.includes(item.domain)} value={item.domain} ><Text fontSize='17px' fontWeight="400" color="#1d252c">{item.name} {item.size === "NO" && <span style={{color:"red"}}>(Not Available)</span> }</Text></Checkbox> )
         })}
 
        
