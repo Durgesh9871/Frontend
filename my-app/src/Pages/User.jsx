@@ -56,7 +56,7 @@ const reviewTitleUser = 1000
 
   const handlePageChange = ()=>{
     setChangePage(changePage+1)
-    if(5 < Math.ceil(reviewTitleUser.length/20) && changePage == 5 ){
+    if(5 < Math.ceil(reviewTitleUser/20) && changePage == 5 ){
       setChangeNum(5)
     }
     setDisableNext(true)
@@ -71,7 +71,7 @@ const reviewTitleUser = 1000
     
   const handlePagePrevious = ()=>{
     setChangePage(changePage-1)
-    if(5 < Math.ceil(reviewTitleUser.length/20) && changePage == 5 ){
+    if(5 < Math.ceil(reviewTitleUser/20) && changePage == 5 ){
       setChangeNum(1)
     }
 
@@ -119,7 +119,6 @@ const reviewTitleUser = 1000
       
       {/* pagination starts from here  */}
       {userData.length > 0 && <Box pt="50px" pb="50px">
-        {console.log(disableNext , disablePre , changePage , changeNum , )}
           <Pagination disableNext={disableNext} disablePre={disablePre} changePage={changePage} changeNum={changeNum} handlePagePrevious={handlePagePrevious} handlePageChange={handlePageChange} setChangePage={setChangePage} reviewTitleUser={reviewTitleUser} divideValue={20} handlePaginationCount={handlePaginationCount}  />
           </Box>}
           
