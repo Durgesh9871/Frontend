@@ -17,7 +17,11 @@ const [disableNext , setDisableNext] = useState(false)
 const [disablePre , setDisablePre] = useState(false)
 
 const pageLoad = useRef()
-      
+
+// for search bar --
+const [searchTitle, setSearchTitle] = useState('');
+
+console.log(searchTitle.length ,"searchTitle")
 
   const dispatch = useDispatch()
   const location = useLocation()
@@ -42,14 +46,14 @@ const [searchParams] = useSearchParams()
            domain : searchParams.getAll('domain') ,
            gender : searchParams.getAll('gender') ,
            available : searchParams.getAll('available') ,
-
+          q:searchTitle
         }
       }
 
       dispatch(getData(getUserParams ,changePage))
   
     }
-  },[ location.search ,changePage])
+  },[ location.search ,changePage , searchTitle])
 
 
 //  pagination logic starts from here ---
@@ -107,7 +111,6 @@ const numLoop = [5,9,13,17,21,25,29,33,37,41,45,49]
     
 
   return (
-    <Box> 
 
      
 
@@ -123,8 +126,11 @@ const numLoop = [5,9,13,17,21,25,29,33,37,41,45,49]
 
 {/*  user data starts from here ---- */}
       <Box id='DisplayDataBox' style={{ height:"auto" , width:"82%"}} >
-      <SearchBar />
-{/* Data display in format of grid */}
+
+        {/*  search bar is here --- */}
+      <SearchBar setSearchTitle={setSearchTitle} />
+
+   {/* Data display in format of grid */}
       <SimpleGrid columns={{base:1, sm: 1, md: 2, lg: 3,xl: 3,'2xl': 3,}} spacingY={10}  >
      
     { userData?.length > 0 && userData.map((ele)=>{
@@ -144,7 +150,6 @@ const numLoop = [5,9,13,17,21,25,29,33,37,41,45,49]
 
 
 
-    </Box>
     </Box>
   )
 }

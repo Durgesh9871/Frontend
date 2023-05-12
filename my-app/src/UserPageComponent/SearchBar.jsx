@@ -4,8 +4,7 @@ import { SearchIcon } from '@chakra-ui/icons';
 import './SearchBar.css';
 
 
-const SearchBar = () => {
-    const [searchTitle, setSearchTitle] = useState('');
+const SearchBar = ({setSearchTitle}) => {
 
 
   return (
@@ -24,7 +23,7 @@ const SearchBar = () => {
 						xl: '50%',
 						'2xl': '50%',
 					}}
-					color="#fff"
+					color="black"
 					placeholder="Search User"
 					onChange={(e) => setSearchTitle(e.target.value)}
 					height="53px"
