@@ -38,17 +38,19 @@ const DisplayData = ({item , loading}) => {
         <Box style={{display:"flex" ,justifyContent:"space-between" }}>
          <Box>
 
-         <Heading fontSize="15.5px" fontWeight="600" color="#303030" textAlign="left">{"hello Brand"}</Heading>
+         <Heading fontSize="16px" fontWeight="700" color="#303030" textAlign="left">{item.domain}</Heading>
          </Box>
 
          </Box> 
 
-         {/*  Ends here hover ------------------------------------ */}
 
         
-         {   <Heading fontSize="15.5px" fontWeight="600" color="#303030" textAlign="left">{"this is also brand"}</Heading> }
-        { <Text fontSize='14px' className='control' fontWeight="500" color="#727272" textAlign="left"  >{"title"}</Text> }
-         
+            <Heading fontSize="15.5px" fontWeight="600" color="#727272" textAlign="left">{item.first_name + " " + item.last_name}</Heading> 
+            <Box display="flex" justifyContent="space-between">
+         <Text fontSize='14px'  fontWeight="500" color="#727272" textAlign="left"  >{item.gender}</Text> 
+         <Text fontSize='14px'  fontWeight="600" color={item.available == true ? "#00f700" : "#e34f4f"} textAlign="left"  >{item.available == true ? "Available" : "Not Available"}</Text> 
+
+         </Box>
 
         </Box>
         </SkeletonText>
