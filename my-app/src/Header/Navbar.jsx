@@ -72,7 +72,7 @@ export default function MainNavbar() {
         </Flex>
         <Flex justify={{ base: "center", md: "center" }}>
          
-        <a href="">  <Text className="logo" >Heliverse</Text> </a>
+        <Link to="/">  <Text className="logo" >Heliverse</Text> </Link>
          
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: "center", md: "center" }}>
