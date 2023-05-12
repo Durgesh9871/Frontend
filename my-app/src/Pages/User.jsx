@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getData } from '../Redux/action'
 import { useLocation, useSearchParams } from 'react-router-dom'
 import { Pagination } from '../UserPageComponent/Pagination'
+import { SearchBar } from '../UserPageComponent/SearchBar'
 // import "./user.css"
 
 const User = () => {
@@ -106,6 +107,10 @@ const numLoop = [5,9,13,17,21,25,29,33,37,41,45,49]
     
 
   return (
+    <Box> 
+
+     
+
     <Box id='filterMainBox_&_DisplayData' style={{border:"1px  red" ,width:"92%" , margin:"auto" , height:"auto" , display:"flex" , justifyContent:"space-between" }}>
       {/*  Filter main box --- */}
 
@@ -118,6 +123,7 @@ const numLoop = [5,9,13,17,21,25,29,33,37,41,45,49]
 
 {/*  user data starts from here ---- */}
       <Box id='DisplayDataBox' style={{ height:"auto" , width:"82%"}} >
+      <SearchBar />
 {/* Data display in format of grid */}
       <SimpleGrid columns={{base:1, sm: 1, md: 2, lg: 3,xl: 3,'2xl': 3,}} spacingY={10}  >
      
@@ -138,6 +144,7 @@ const numLoop = [5,9,13,17,21,25,29,33,37,41,45,49]
 
 
 
+    </Box>
     </Box>
   )
 }
