@@ -48,7 +48,7 @@ const DisplayData = ({item , loading}) => {
       else {
         toast({
           title: 'Not Added (Domain Already Exist)',
-          description: `${item.domain} domain is Already present in Team`,
+          description: `${item.domain} member is Already present in Team`,
           status: 'warning',
           duration: 3000,
           isClosable: true,
