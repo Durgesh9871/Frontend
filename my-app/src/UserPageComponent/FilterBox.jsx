@@ -135,11 +135,7 @@ const clearAllFilterItem = ()=>{
       domain: "Marketing",
       value: "Marketing",
     },
-    {
-      id: "6",
-      domain: "Business",
-      value: "Business",
-    },
+    
   ];
 
   const filterGenderData = [
