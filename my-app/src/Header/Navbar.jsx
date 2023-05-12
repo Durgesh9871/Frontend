@@ -18,7 +18,6 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from "@chakra-ui/icons";
-import image from "./4.png";
 import { Link } from "react-router-dom";
 import "./navbar.css"
 
@@ -42,7 +41,8 @@ export default function MainNavbar() {
       zIndex={"2"}
       position="sticky"
       top={'0px'}
-     
+     padding="0px 10px"
+
     >
       <Flex
         bg={useColorModeValue("white", "gray.800")}

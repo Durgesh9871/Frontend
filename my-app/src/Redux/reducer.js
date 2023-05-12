@@ -13,10 +13,10 @@ const UserReducer = (oldstate=initialstate , action)=>{
                 return {...oldstate , isLoading:true }
                 
                 case "GET_DATA_SUCCESS":
-                return {...oldstate , userData:action.payload}
+                return {...oldstate , userData:action.payload , isLoading:false}
 
                 case "GET_DATA_FAILURE":
-                return {...oldstate , isError:true}
+                return {...oldstate , isError:true , isLoading:false}
 
                  default:
                 return oldstate

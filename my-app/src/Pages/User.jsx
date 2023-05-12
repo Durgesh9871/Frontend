@@ -20,10 +20,10 @@ const User = () => {
     }
   })
 
-  console.log(userData ,"snb")
+  // console.log(isLoading ,"snb")
 
   useEffect(()=>{
-    dispatch(getData)
+    dispatch(getData())
   },[])
     
 
@@ -43,7 +43,10 @@ const User = () => {
 {/* Data display in format of grid */}
       <SimpleGrid columns={{base:1, sm: 1, md: 2, lg: 3,xl: 3,'2xl': 3,}} spacingY={10}  >
      
-    {  <DisplayData />}
+    { userData?.length > 0 && userData.map((ele)=>{
+     return  <DisplayData key={ele.id} item={ele} loading={isLoading} />
+    })
+    }
      
 
       </SimpleGrid>
