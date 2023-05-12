@@ -264,7 +264,7 @@ const clearAllFilterItem = ()=>{
               return (
                 <Checkbox key={item.id}  value={item.value}
                 onChange={handleChangeAvailability}
-                isChecked={available.includes(item.value)}  >
+                 >
                   <Text fontSize="17px" fontWeight="400" color="#1d252c">
                     {item.value === true ? "Available" : "Not Available"}
                   </Text>

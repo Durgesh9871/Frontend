@@ -4,12 +4,15 @@ import { FilterBox } from '../UserPageComponent/FilterBox'
 import { DisplayData } from '../UserPageComponent/DisplayData'
 import { useDispatch, useSelector } from 'react-redux'
 import { getData } from '../Redux/action'
+import { useLocation, useSearchParams } from 'react-router-dom'
 // import "./user.css"
 
 const User = () => {
       
 
   const dispatch = useDispatch()
+  const location = useLocation()
+const [searchParams] = useSearchParams()
 //  getting data and display it ------------
   const {isLoading , userData , isError} = useSelector((state)=>{
     return {
@@ -23,8 +26,23 @@ const User = () => {
   // console.log(isLoading ,"snb")
 
   useEffect(()=>{
-    dispatch(getData())
-  },[])
+    if(location || userData.length === 0  ){
+     
+      const getUserParams = {
+        params:{
+           domain : searchParams.getAll('domain') ,
+           gender : searchParams.getAll('gender') ,
+           available : searchParams.getAll('available') ,
+
+        }
+      }
+
+      dispatch(getData(getUserParams))
+      // dispatch(getCartData)
+      // dispatch(getWishListData)
+    }
+  },[ location.search])
+
     
 
   return (
