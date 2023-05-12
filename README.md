@@ -1,6 +1,6 @@
 # Heliverse-Assignment 
 Welcome to my website! I have developed a user page that allows you to search for specific users and apply advanced filters to narrow down your results. Additionally, you can create teams with individuals from various domains, . Enjoy the benefits of advanced pagination options as well.
- <h2> Kindly Check the deploy link ---> https://superb-alfajores-6b9ed9.netlify.app/   </h2>
+ <h2> Kindly Check the deploy link ---> https://heliverse-one.vercel.app   </h2>
 
  
 Tech Stack 
