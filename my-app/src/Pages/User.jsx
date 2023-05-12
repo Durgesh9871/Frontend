@@ -1,13 +1,21 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import {Box, SimpleGrid} from "@chakra-ui/react"
 import { FilterBox } from '../UserPageComponent/FilterBox'
 import { DisplayData } from '../UserPageComponent/DisplayData'
 import { useDispatch, useSelector } from 'react-redux'
 import { getData } from '../Redux/action'
 import { useLocation, useSearchParams } from 'react-router-dom'
+import { Pagination } from '../UserPageComponent/Pagination'
 // import "./user.css"
 
 const User = () => {
+  // pagination --
+const [changeNum , setChangeNum] = useState(1)
+const [changePage  ,setChangePage] = useState(1)
+const [disableNext , setDisableNext] = useState(false)
+const [disablePre , setDisablePre] = useState(false)
+
+const pageLoad = useRef()
       
 
   const dispatch = useDispatch()
@@ -37,11 +45,44 @@ const [searchParams] = useSearchParams()
         }
       }
 
-      dispatch(getData(getUserParams))
-      // dispatch(getCartData)
-      // dispatch(getWishListData)
+      dispatch(getData(getUserParams ,changePage))
+  
     }
-  },[ location.search])
+  },[ location.search ,changePage])
+
+
+//  pagination logic starts from here ---
+const reviewTitleUser = 1000
+
+  const handlePageChange = ()=>{
+    setChangePage(changePage+1)
+    if(5 < Math.ceil(reviewTitleUser.length/20) && changePage == 5 ){
+      setChangeNum(5)
+    }
+    setDisableNext(true)
+      clearTimeout(pageLoad.current)
+      pageLoad.current = setTimeout(()=>{
+        setDisableNext(false)
+      },300)
+  
+   
+    
+  }
+    
+  const handlePagePrevious = ()=>{
+    setChangePage(changePage-1)
+    if(5 < Math.ceil(reviewTitleUser.length/20) && changePage == 5 ){
+      setChangeNum(1)
+    }
+
+    setDisablePre(true)
+    clearTimeout(pageLoad.current)
+    pageLoad.current = setTimeout(()=>{
+      setDisablePre(false)
+    },300)
+
+  }
+   
 
     
 
@@ -69,7 +110,15 @@ const [searchParams] = useSearchParams()
 
       </SimpleGrid>
       
+      {/* pagination starts from here  */}
+      {userData.length > 0 && <Box pt="50px" pb="50px">
+        {console.log(disableNext , disablePre , changePage , changeNum , )}
+          <Pagination disableNext={disableNext} disablePre={disablePre} changePage={changePage} changeNum={changeNum} handlePagePrevious={handlePagePrevious} handlePageChange={handlePageChange} setChangePage={setChangePage} reviewTitleUser={reviewTitleUser} divideValue={20}  />
+          </Box>}
+          
       </Box>
+
+
 
     </Box>
   )
