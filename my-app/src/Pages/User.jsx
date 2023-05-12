@@ -82,6 +82,13 @@ const reviewTitleUser = 1000
     },300)
 
   }
+
+  const handlePaginationCount = (num)=>{
+  setChangePage(num)
+
+}
+
+
    
 
     
@@ -113,7 +120,7 @@ const reviewTitleUser = 1000
       {/* pagination starts from here  */}
       {userData.length > 0 && <Box pt="50px" pb="50px">
         {console.log(disableNext , disablePre , changePage , changeNum , )}
-          <Pagination disableNext={disableNext} disablePre={disablePre} changePage={changePage} changeNum={changeNum} handlePagePrevious={handlePagePrevious} handlePageChange={handlePageChange} setChangePage={setChangePage} reviewTitleUser={reviewTitleUser} divideValue={20}  />
+          <Pagination disableNext={disableNext} disablePre={disablePre} changePage={changePage} changeNum={changeNum} handlePagePrevious={handlePagePrevious} handlePageChange={handlePageChange} setChangePage={setChangePage} reviewTitleUser={reviewTitleUser} divideValue={20} handlePaginationCount={handlePaginationCount}  />
           </Box>}
           
       </Box>
