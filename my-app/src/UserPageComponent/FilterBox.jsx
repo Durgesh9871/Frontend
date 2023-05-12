@@ -3,7 +3,7 @@ import { Box, Checkbox, Text,
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Modalfilter } from "./Modalfilter";
-import "./ProductHeadings.css";
+import "./Highlight.css";
 import {CloseIcon} from "@chakra-ui/icons"
 
 const FilterBox = () => {

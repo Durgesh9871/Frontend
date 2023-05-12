@@ -1,6 +1,6 @@
 import { Button, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useDisclosure ,Text, Box, Checkbox } from '@chakra-ui/react'
 import React from 'react' ; 
-import "./ProductHeadings.css" ; 
+import "./Highlight.css" ; 
 
 const Modalfilter = ({domain ,handleChange}) => {
     const { isOpen, onOpen, onClose } = useDisclosure()
