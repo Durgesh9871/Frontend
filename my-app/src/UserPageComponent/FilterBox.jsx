@@ -154,6 +154,23 @@ const clearAllFilterItem = ()=>{
       value:"Male" ,
 
     },
+    {
+      id: "3",
+      gender: "Agender",
+      value:"Agender" ,
+    },
+    {
+      id: "4",
+      gender: "Bigender",
+      value:"Bigender" ,
+
+    },
+    {
+      id: "5",
+      gender: "Polygender",
+      value:"Polygender" ,
+
+    },
   ];
 
   const filterAvailabilityData = [
