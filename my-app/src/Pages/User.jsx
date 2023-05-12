@@ -53,12 +53,19 @@ const [searchParams] = useSearchParams()
 
 //  pagination logic starts from here ---
 const reviewTitleUser = 1000
+ 
+// this loop for pagination count --------
+const numLoop = [5,9,13,17,21,25,29,33,37,41,45,49]
 
   const handlePageChange = ()=>{
     setChangePage(changePage+1)
-    if(5 < Math.ceil(reviewTitleUser/20) && changePage == 5 ){
-      setChangeNum(5)
+    for(var i=0 ; i<numLoop.length ; i++){
+      if(5 < Math.ceil(reviewTitleUser/20) && changePage == numLoop[i] ){
+        setChangeNum(numLoop[i])
+      }
     }
+   
+
     setDisableNext(true)
       clearTimeout(pageLoad.current)
       pageLoad.current = setTimeout(()=>{
@@ -71,9 +78,12 @@ const reviewTitleUser = 1000
     
   const handlePagePrevious = ()=>{
     setChangePage(changePage-1)
-    if(5 < Math.ceil(reviewTitleUser/20) && changePage == 5 ){
-      setChangeNum(1)
+    for(var i=0 ; i<numLoop.length ; i++){
+      if(5 < Math.ceil(reviewTitleUser/20) && changePage == numLoop[i] ){
+        setChangeNum(numLoop[i]-4)
+      }
     }
+   
 
     setDisablePre(true)
     clearTimeout(pageLoad.current)
