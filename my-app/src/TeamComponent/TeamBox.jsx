@@ -1,9 +1,11 @@
 import React from 'react'
 import { Box, Heading , Image , Text} from '@chakra-ui/react'
-import {AiFillDelete} from "react-icons/ai"
 
 
-const TeamBox = ({item}) => {
+const TeamBox = ({item  }) => {
+
+   
+
   return (
     <Box shadow="base" display="flex" m="40px auto" justifyContent="space-around" p="12px" alignItems="center" className='hoverProductDiv' w={{base:"auto", sm: "55vw", md: "40vw", lg: "28vw" ,xl: "23vw",'2xl': "23vw",}}  >
       
@@ -26,7 +28,6 @@ const TeamBox = ({item}) => {
         <Box display="flex" justifyContent="space-between" mt="10px">
          <Text fontSize='14px'  fontWeight="600" color={item.available == true ? "#00f700" : "#e34f4f"} textAlign="left"  >{item.available == true ? "Available" : "Not Available"}</Text> 
         
-        <AiFillDelete style={{fontSize:"20px" , color:"red" , cursor:"pointer"}} />
 
          </Box>
 
